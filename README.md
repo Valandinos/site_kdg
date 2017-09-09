@@ -9,7 +9,7 @@
 - Faire le portail d'administration du site avec:
     - création de formulaire
     - heure d'ouverture et de fermeture du formulaire
-    - gestion du message d'accueil
-    - gestion du calendrier
+    - gestion du message d'accueil (adresse du KAP, etc...)
+    - gestion du calendrier (sous forme de calendrier même, et sous forme de liste avec date des prochains events)
 - ajouter la date en haut du formulaire d'inscription aux JDR
 - Système de login pour l'administration
