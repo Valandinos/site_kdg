@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulaire d'inscription - Kot du Grenier</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/jquery-3.2.0.min.js"></script>
+    <script src="./js/library.js"></script>
+    <script>var listeJDR = <?php echo $listeJDR ?>;
+            var nbrInscrits = <?php echo $nbrInscrits ?>;
+    </script>
+    <script src="./js/jquery-3.2.0.min.js"></script>
+    <script src="./js/library.js"></script>
+  </head>
+  <body onload = "rpgListLoader();">
+    <form action="./form_handler.php" method="post">
+      <fieldset id="personnalInfo">
+      <legend>Informations personnelles</legend>
+      <div class="row">
+        <div class="three columns">
+          <span>Nom:* </span><input type="text" name="nom" required="" /><br />
+        </div>
+        <div class="three columns">
+          <span>Prénom:* </span><input type="text" name="prenom" required /><br />
+        </div>
+        <div class="three columns">
+          <span>Email:* </span><input type="email" name="mail" required /><br />
+        </div>
+      </div>
+      </fieldset>
+      <fieldset id="rpgSelect">
+        <legend>Choix du Jeu de Rôle</legend>
+        <span id="rpgList"></span>
+      </fieldset>
+      <input type="submit" value="Valider" id="subButton" class="button-primary"/>
+    </form>
+  </body>
+</html>

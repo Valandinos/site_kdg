@@ -1,0 +1,47 @@
+// Requete jointe sur les deux tables pour avoir ne nom de la personne et le JDR où elle est inscrite.
+SELECT inscriptionsJDR.nom, inscriptionsJDR.prenom, listeJDR.nomJDR FROM inscriptionsJDR INNER JOIN listeJDR
+ON inscriptionsJDR.jdrID = listeJDR.jdrID
+
+
+// Requete pour compter le nombre d'inscrits à un JDR
+SELECT COUNT(jdrID)
+FROM inscriptionsJDR
+WHERE jdrID = "1"
+
+
+// Inserer des valeurs multiples dans une table
+INSERT INTO inscriptionsJDR (nom, prenom, email, jdrID)
+VALUES
+("Christophe", "Jean", "1@lol.com", 3),
+("Christophe", "Jean", "1@lol.com", 4),
+("Christophe", "Jean", "1@lol.com", 4),
+("Christophe", "Jean", "1@lol.com", 2),
+("Christophe", "Jean", "1@lol.com", 2)
+
+INSERT INTO listeJDR (nomJDR, maxInscrits) VALUES
+("7th Sea", 5),
+("Vampires Mange tes Cheveux", 3),
+("Pathfinder", 2)
+
+// Compter le nombre d'inscrits par table de jdr
+SELECT jdrID, COUNT(*)
+FROM inscriptionsJDR
+GROUP BY jdrID
+
+// Super requête de la mort qui tue pour le nombre d'inscrits
+SELECT listeJDR.nomJDR, inscriptionsJDR.jdrID, COUNT(inscriptionsJDR.jdrID) as "nbrInscrits", listeJDR.maxInscrits
+FROM inscriptionsJDR inner join listeJDR on inscriptionsJDR.jdrID = listeJDR.jdrID
+GROUP BY inscriptionsJDR.jdrID
+
+// Requete pour avoir le nombre d'inscrits par table de JDR
+SELECT inscriptionsJDR.jdrID, COUNT(inscriptionsJDR.jdrID) as "nbrInscrits"
+FROM inscriptionsJDR
+GROUP BY inscriptionsJDR.jdrID
+
+// Remettre l'autoincrement des tables à 0 (merci SQLITE >.<)
+UPDATE SQLITE_SEQUENCE SET SEQ=0 WHERE NAME='listeJDR' OR NAME='inscriptionsJDR';
+
+SOLUTION
+
+Remettre le record d'ID 0 dans listeJDR, et rajouter manuellement et d'office un objet de type [{"jdrID":0,"nbrInscrits": A CALCULER} en première position dans l'array de nbrInscrits
+Ne fonctionne pas si on a des "neutres" dans la liste... A revoir
