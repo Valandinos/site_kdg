@@ -13,3 +13,4 @@
     - gestion du calendrier (sous forme de calendrier même, et sous forme de liste avec date des prochains events)
 - ajouter la date en haut du formulaire d'inscription aux JDR
 - Système de login pour l'administration
+- Basculer la BDD de SQLITE à MySQL sur l'hébergement
