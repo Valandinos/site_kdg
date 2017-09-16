@@ -7,6 +7,7 @@
     - calendrier 
     - formulaire d'inscription aux jdr
 - Faire le portail d'administration du site avec:
+    - gestion des données de la BDD (opérations CRUD basiques)
     - création de formulaire
     - heure d'ouverture et de fermeture du formulaire
     - gestion du message d'accueil (adresse du KAP, etc...)
